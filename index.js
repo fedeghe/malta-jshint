@@ -12,14 +12,9 @@ function malta_hint(o, options) {
 	var self = this,
 		start = new Date(),
 		msg,
-		pluginName = path.basename(path.dirname(__filename)),
-		doErr = function (e) {
-			console.log(('[ERROR on ' + o.name + ' using ' + pluginName + '] :').red());
-			console.dir(e);
-			self.stop();
-		};
-	options = options || {};
+		pluginName = path.basename(path.dirname(__filename));
 
+	options = options || {};
 	
 	options.bitwise = 'bitwise' in options ? !!options.bitwise : true;
 	options.curly = 'curly' in options ? !!options.curly : true;
@@ -36,10 +31,10 @@ function malta_hint(o, options) {
 	options.maxerr = 'maxerr' in options ? ~~options.maxerr : 50;
 
 	return function (solve, reject){
-		try{
+		try {
 			jshint(o.content, options);
-		} catch(err) {
-			doErr(err)
+		} catch (err) {
+			self.doErr(err, o, pluginName);
 		}
 
 		if (jshint.errors.length){
