@@ -11,7 +11,13 @@ function malta_hint(o, options) {
 
 	var self = this,
 		start = new Date(),
-		msg;
+		msg,
+		pluginName = path.basename(path.dirname(__filename)),
+		doErr = function (e) {
+			console.log(('[ERROR on ' + o.name + ' using ' + pluginName + '] :').red());
+			console.dir(e);
+			self.stop();
+		};
 	options = options || {};
 
 	
@@ -30,8 +36,11 @@ function malta_hint(o, options) {
 	options.maxerr = 'maxerr' in options ? ~~options.maxerr : 50;
 
 	return function (solve, reject){
-
-		jshint(o.content, options);
+		try{
+			jshint(o.content, options);
+		} catch(err) {
+			doErr(err)
+		}
 
 		if (jshint.errors.length){
 			self.log_info('Jshint says'.invert());
