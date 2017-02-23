@@ -1,6 +1,6 @@
 {
   "name": "malta-jshint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Malta plugin to run jshint live",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,13 +16,13 @@
     "malta jshint plugin"
   ],
   "author": "Federico Ghedina <federico.ghedina@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/fedeghe/malta-jshint/issues"
   },
   "dependencies": {
     "jshint": "^2.9.4",
-    "malta": ">=3.0.0"
+    "malta": ">=3.4.0"
   },
   "main": "./index.js"
 }
