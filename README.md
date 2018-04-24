@@ -1,3 +1,10 @@
+---
+[![npm version](https://badge.fury.io/js/malta-jshint.svg)](http://badge.fury.io/js/malta-jshint)
+[![Dependencies](https://david-dm.org/fedeghe/malta-jshint.svg)](https://david-dm.org/fedeghe/malta-jshint)
+[![npm downloads](https://img.shields.io/npm/dt/malta-jshint.svg)](https://npmjs.org/package/malta-jshint)
+[![npm downloads](https://img.shields.io/npm/dm/malta-jshint.svg)](https://npmjs.org/package/malta-jshint)  
+---  
+
 This plugin can be used on: **.js** files and even on **.coffee** and **.ts** files after using the right plugin
 
 Options : all options of the [jshint package](http://jshint.com/docs/options/)
