@@ -4,8 +4,7 @@ require('malta').checkDeps('jshint');
 // for jshint options
 
 var jshint = require("jshint").JSHINT,
-	path = require('path'),
-	fs = require('fs');
+	path = require('path');
 
 function malta_hint(o, options) {
 
