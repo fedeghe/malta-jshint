@@ -1,17 +1,16 @@
-require('malta').checkDeps('jshint');
-
 // see http://jshint.com/docs/options/
 // for jshint options
 
-var jshint = require("jshint").JSHINT,
+const jshint = require("jshint").JSHINT,
 	path = require('path');
 
 function malta_hint(o, options) {
 
-	var self = this,
+	const self = this,
 		start = new Date(),
-		msg,
-		pluginName = path.basename(path.dirname(__filename));
+        pluginName = path.basename(path.dirname(__filename));
+    
+    let msg;
 
 	options = options || {};
 	
@@ -29,7 +28,7 @@ function malta_hint(o, options) {
 	options.maxcomplexity = 'maxcomplexity' in options ? ~~options.maxcomplexity : 10;
 	options.maxerr = 'maxerr' in options ? ~~options.maxerr : 50;
 
-	return function (solve, reject){
+	return (solve, reject) => {
 		try {
 			jshint(o.content, options);
 		} catch (err) {
@@ -39,13 +38,12 @@ function malta_hint(o, options) {
 		if (jshint.errors.length){
 			self.log_info('Jshint says'.invert());
 
-			var errs = jshint.errors,
+			let errs = jshint.errors,
 				i = 0,
 				l = errs.length,
 				out ;
 
 			for (null; i < l; i++) {
-				// console.dir(errs[i])
 				if (errs[i] && 'raw' in errs[i]){
 					out = self.utils.replaceAll(
 						errs[i].raw,

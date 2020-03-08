@@ -21,8 +21,7 @@
         "url": "https://github.com/fedeghe/malta-jshint/issues"
     },
     "dependencies": {
-        "jshint": "^2.9.6",
-        "malta": "^4.0.4"
+        "jshint": "2.11.0"
     },
     "main": "./index.js"
 }
